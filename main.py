@@ -3,6 +3,8 @@ from random import choice
 
 # 10 x 10 grid of dots, 20 in size, 50 paces apart
 tommy = Turtle()
+tommy.hideturtle()
+tommy.speed("fastest")
 # tommy.shape("circle")
 
 colormode(255)
@@ -13,51 +15,21 @@ color_list = [(237, 224, 80), (205, 4, 73), (236, 50, 130), (198, 164, 8), (111,
               (34, 136, 72), (63, 20, 7), (126, 219, 234), (190, 14, 4), (109, 87, 215), (140, 217, 202),
               (238, 64, 34), (71, 10, 28)]
 
-# start_y = -300
-# tommy.penup()
-# tommy.setpos(-250, -300)
-# tommy.stamp()
-# mode()
-# for j in range(10):
-#     for i in range(10):
-#         tommy.color(choice(color_list))
-#         tommy.dot(20)  # tommy.stamp()
-#         tommy.penup()
-#         tommy.fd(50)
-#         tommy.sety(start_y + 10)
 
-# for i in range(10):
-#     tommy.color(choice(color_list))
-#     tommy.dot(20)
-#     tommy.penup()
-#     tommy.fd(50)
-#     tommy.penup()
-#
-# tommy.setpos(-250, -270)
-# for i in range(10):
-#     tommy.color(choice(color_list))
-#     tommy.dot(20)
-#     tommy.penup()
-#     tommy.fd(50)
-
-
-def hirst_painting(turtle):
-    turtle.speed("fastest")
-    y = -350
+def hirst_painting(turtle, rows, columns):
+    y = -225
     turtle.penup()
-    for k in range(10):
-        y += 50
-        turtle.setpos(-250, y)
-        for j in range(10):
-            turtle.color(choice(color_list))
-            turtle.dot(20)
+    for k in range(rows):
+        turtle.setpos(-225, y)
+        for j in range(columns):
+            turtle.dot(20, choice(color_list))
             turtle.penup()
             turtle.fd(50)
             turtle.penup()
-    turtle.color("white")
+        y += 50
 
 
-hirst_painting(tommy)
+hirst_painting(tommy, 10, 10)
 
 
 # tommy.dot(4, choice(color_list))
